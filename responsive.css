@@ -1,0 +1,140 @@
+/* تنسيقات التصميم المتجاوب */
+
+/* الشاشات المتوسطة (أقل من 992px) */
+@media (max-width: 992px) {
+  .notes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+  
+  .app-header {
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .search-container {
+    max-width: 400px;
+  }
+}
+
+/* الشاشات الصغيرة (أقل من 768px) */
+@media (max-width: 768px) {
+  .app-header {
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+  }
+  
+  .logo {
+    order: 1;
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-container {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin: 0.5rem 0 0;
+  }
+  
+  .header-actions {
+    order: 2;
+  }
+  
+  .notes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .modal-content {
+    width: 95%;
+  }
+}
+
+/* الشاشات الصغيرة جداً (أقل من 576px) */
+@media (max-width: 576px) {
+  .note-input-container {
+    margin: 1rem auto;
+  }
+  
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .note-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .color-palette {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  #add-note {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .app-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .modal-footer {
+    flex-direction: column;
+  }
+  
+  .modal-footer button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* تعديلات لتحسين قراءة النص وحجم الخط */
+@media (max-width: 400px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+  
+  .note-card-title {
+    font-size: 1rem;
+  }
+  
+  .note-card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* تعديلات لدعم الشاشات الكبيرة */
+@media (min-width: 1200px) {
+  .notes-container {
+    max-width: 1400px;
+  }
+  
+  .notes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* تعديلات لدعم الشاشات العالية الدقة */
+@media (min-width: 1600px) {
+  .notes-container {
+    max-width: 1600px;
+  }
+}
+
+/* تعديلات لتحسين تجربة اللمس على الأجهزة اللوحية والهواتف */
+@media (hover: none) {
+  .note-card-actions button {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .color-option {
+    width: 30px;
+    height: 30px;
+  }
+}

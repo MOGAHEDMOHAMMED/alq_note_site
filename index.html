@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مذكراتي - تطبيق تسجيل الملاحظات</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Tajawal:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header class="app-header">
+        <div class="logo">
+            <h1><i class="fas fa-sticky-note"></i> مذكراتي</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-notes" placeholder="بحث في الملاحظات...">
+            <button id="search-btn" aria-label="بحث">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <div class="header-actions">
+            <button id="theme-toggle" aria-label="تبديل الوضع">
+                <i class="fas fa-moon theme-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- منطقة إضافة ملاحظة جديدة -->
+    <div class="note-input-container">
+        <div class="note-input" id="note-input">
+            <input type="text" id="note-title" placeholder="العنوان">
+            <textarea id="note-content" placeholder="أضف ملاحظة جديدة..."></textarea>
+            <div class="note-actions">
+                <div class="color-palette">
+                    <button class="color-option selected" data-color="default"></button>
+                    <button class="color-option" data-color="red"></button>
+                    <button class="color-option" data-color="orange"></button>
+                    <button class="color-option" data-color="yellow"></button>
+                    <button class="color-option" data-color="green"></button>
+                    <button class="color-option" data-color="blue"></button>
+                    <button class="color-option" data-color="purple"></button>
+                </div>
+                <button id="add-note">إضافة <i class="fas fa-plus"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- عرض الملاحظات -->
+    <div class="notes-container">
+        <div class="notes-filter">
+            <select id="sort-notes">
+                <option value="newest">الأحدث أولاً</option>
+                <option value="oldest">الأقدم أولاً</option>
+                <option value="title">حسب العنوان</option>
+            </select>
+        </div>
+        
+        <div class="notes-grid" id="notes-grid">
+            <!-- ستتم إضافة الملاحظات هنا بشكل ديناميكي -->
+        </div>
+    </div>
+
+    <!-- نافذة تعديل الملاحظة -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>تعديل الملاحظة</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="edit-title" placeholder="العنوان">
+                <textarea id="edit-content" placeholder="محتوى الملاحظة..."></textarea>
+                <div class="color-palette">
+                    <button class="color-option" data-color="default"></button>
+                    <button class="color-option" data-color="red"></button>
+                    <button class="color-option" data-color="orange"></button>
+                    <button class="color-option" data-color="yellow"></button>
+                    <button class="color-option" data-color="green"></button>
+                    <button class="color-option" data-color="blue"></button>
+                    <button class="color-option" data-color="purple"></button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-edit">حفظ التغييرات</button>
+                <button id="cancel-edit">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة تأكيد الحذف -->
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>تأكيد الحذف</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>هل أنت متأكد من حذف هذه الملاحظة؟</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirm-delete">حذف</button>
+                <button id="cancel-delete">إلغاء</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- الشريط السفلي -->
+    <footer class="app-footer">
+        <div class="notes-count">
+            <span id="notes-count">0</span> ملاحظات
+        </div>
+        <div class="app-info">
+                 تطبيق مذكراتي &copy; 2025
+           
+        </div>
+         <div class="app-info">
+                 إعداد وتصميم م/محمد القحوم
+           
+        </div>
+    </footer>
+
+    <!-- ملفات JavaScript -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
